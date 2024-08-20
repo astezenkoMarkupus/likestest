@@ -40,7 +40,8 @@ function critick_init_theme(): void {
 	add_theme_support( 'post-thumbnails' );
 
 	// Custom images sizes.
-	// add_image_size( 'full-hd', 1920, 0, 1 );
+	add_image_size( 'preview', 170, 220, 1 );
+	add_image_size( 'preview@2x', 340, 440, 1 );
 }
 
 add_action( 'wp_enqueue_scripts', 'critick_inclusion_enqueue' );

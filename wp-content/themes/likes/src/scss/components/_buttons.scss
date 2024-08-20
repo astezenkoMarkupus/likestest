@@ -1,0 +1,15 @@
+.naked-button {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	cursor: pointer
+}
+
+.c-btn {
+	@extend .naked-button;
+
+	&:disabled {
+		opacity: 0.5;
+		cursor: not-allowed
+	}
+}

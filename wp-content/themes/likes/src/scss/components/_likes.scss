@@ -1,0 +1,25 @@
+.c-likes {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	font-weight: $fw-bold;
+
+	button {
+		width: 22px;
+		height: 22px;
+		border-radius: 50%;
+		transition: opacity ease-in-out $tr;
+
+		&:hover {
+			opacity: 0.7
+		}
+
+		&.likes-plus {
+			color: $c-green
+		}
+
+		&.likes-minus {
+			color: $c-yellow
+		}
+	}
+}

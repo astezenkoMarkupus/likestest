@@ -7,6 +7,11 @@
  */
 
 get_header();
+
+$posts = get_posts( [
+	'post_type'   => 'post',
+	'post_status' => 'publish',
+] );
 ?>
 
 	<div class="container">
@@ -15,19 +20,10 @@ get_header();
 				<h2 class="section-title"><?php _e( 'Статьи', 'critick' ) ?></h2>
 
 				<?php
-				if ( have_posts() ) {
-					while ( have_posts() ) {
-						the_post();
-
-						echo get_the_permalink();
-						the_post_thumbnail();
-						the_title();
-
-						if ( has_excerpt() ) {
-							the_excerpt();
-						}
-
-						echo esc_html( get_the_date( 'F j, Y' ) );
+				if ( ! empty( $posts ) ) {
+					foreach ( $posts as $p ) {
+						$post_id = $p->ID;
+						get_template_part( 'template-parts/preview', null, [ 'id' => $post_id ] );
 					}
 				} else {
 					esc_html_e( 'Posts not found.', 'critick' );

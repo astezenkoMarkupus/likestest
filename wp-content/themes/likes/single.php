@@ -24,7 +24,7 @@ get_header();
 			 * @example
 			 * template-parts/single/content-portfolio.php for 'portfolio' custom post type.
 			 */
-			get_template_part( 'template-parts/single/content', get_post_type() );
+			get_template_part( 'template-parts/content', get_post_type() );
 		}
 		?>
 	</main>
