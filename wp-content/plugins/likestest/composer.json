@@ -1,0 +1,14 @@
+{
+  "name": "astezenko/likestest",
+  "authors": [
+    {
+      "name": "Andrei Stezenko",
+      "email": "andrew.stezenko@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "LikesTest\\": "./"
+    }
+  }
+}

@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box
+}
+
+.form {
+    margin-top: 24px
+}
+
+.form .button span {
+    display: none
+}
+
+.form .button.loading {
+    opacity: 0.5;
+    pointer-events: none
+}
+
+.form .button.loading span {
+    display: inline-block
+}
+
+.testplugin-todos-heading,
+.testplugin-todos-item {
+    display: flex;
+    flex-wrap: wrap
+}
+
+.testplugin-todos-item {
+    background-color: #fefefe
+}
+
+.testplugin-todos-item:nth-child(even) {
+    background-color: #efefef
+}
+
+.testplugin-todos-heading div,
+.testplugin-todos-item div {
+    width: 20%;
+    padding: 15px;
+    text-align: center
+}
+
+.testplugin-todos-heading div {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase
+}
+
+.testplugin-todos-item div {
+    font-size: 18px
+}
+
+.testplugin-todos-list {
+    margin-top: 36px
+}

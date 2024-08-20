@@ -1,0 +1,18 @@
+// Defaults styles.
+@import 'utils/fonts/fonts';
+@import 'utils/vars/vars';
+@import 'utils/typography/typography';
+@import 'utils/grid/grid';
+@import 'utils/base/base';
+@import 'utils/helpers/helpers';
+
+// Header styles.
+@import 'header/header';
+@import 'header/menu';
+
+// Footer styles.
+@import 'footer/footer';
+@import 'footer/menu';
+
+// Theme components.
+@import 'components/components';
