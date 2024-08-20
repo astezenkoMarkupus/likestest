@@ -38,7 +38,7 @@ $author_name = get_the_author_meta( 'display_name', $author_id );
 				<?php printf( __( '<span>Автор:</span> %s', 'critick' ), $author_name ) ?>
 			</div>
 
-			<?php get_template_part( 'components/likes', null, ['id' => $post_id] ) ?>
+			<?php echo do_shortcode( '[likestest post_id=' . $post_id . ']' ) ?>
 		</div>
 	</div>
 </article><!-- .preview -->
