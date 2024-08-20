@@ -1,0 +1,9 @@
+.sidebar {
+	width: 100%;
+	background-color: $c-gray;
+	padding: $spacer;
+
+	@media (min-width: $lg) {
+		width: 293px
+	}
+}

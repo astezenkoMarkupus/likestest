@@ -1,1 +1,8 @@
-// Footer common styles.
+.footer {
+	padding-bottom: $spacer;
+
+	&-inner {
+		padding: $spacer;
+		background-color: $c-gray
+	}
+}

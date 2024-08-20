@@ -1,3 +1,32 @@
+$sidebar-width: 293px;
+
 .container {
 	@include container
+}
+
+.main {
+	width: 100%;
+	background-color: $c-gray;
+	padding: 15px;
+
+	@media (min-width: $lg) {
+		width: calc(100% - $sidebar-width - $spacer);
+		padding: $spacer
+	}
+
+	&-wrap {
+		display: flex;
+		flex-direction: column;
+		gap: $spacer;
+		padding-bottom: 50px;
+
+		@media (min-width: $lg) {
+			flex-flow: row wrap;
+			align-items: flex-start
+		}
+
+		@media (min-width: $lg) {
+			padding-bottom: 172px
+		}
+	}
 }

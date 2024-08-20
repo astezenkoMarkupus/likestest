@@ -4,9 +4,18 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-	font-family: $ff-title;
-	font-weight: $fw-bold;
+	font-family: $ff;
+	font-weight: $fw-regular;
 	line-height: $lh-title;
 	word-wrap: break-word;
 	margin: 0
 }
+
+h2, .h2 {
+	font-size: 32px
+}
+
+.section-title {
+	margin-bottom: $spacer
+}
+

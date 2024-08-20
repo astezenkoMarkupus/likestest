@@ -1,1 +1,9 @@
-// Header common styles.
+.header {
+	padding-top: $spacer;
+	margin-bottom: $spacer;
+
+	&-top {
+		padding: $spacer;
+		background-color: $c-gray
+	}
+}

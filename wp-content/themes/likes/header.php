@@ -47,12 +47,17 @@ $site_description = get_bloginfo( 'description', 'display' );
 
 <div class="wrapper">
 	<header class="header">
-		<?php
-		wp_nav_menu( [
-			'theme_location'  => 'header_menu',
-			'container'       => 'nav',
-			'container_class' => 'header-nav',
-		] );
-		?>
+		<div class="container">
+			<div class="header-top">
+				<h2><?php _e( 'Header', 'critick' ) ?></h2>
+			</div>
+			<?php
+			wp_nav_menu( [
+				'theme_location'  => 'header_menu',
+				'container'       => 'nav',
+				'container_class' => 'header-nav',
+			] );
+			?>
+		</div>
 	</header>
 
