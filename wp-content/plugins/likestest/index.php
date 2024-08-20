@@ -10,8 +10,16 @@
 
 require 'vendor/autoload.php';
 
+if ( ! class_exists( 'WP_List_Table' ) ) {
+	require_once ABSPATH . 'wp-admin/includes/class-wp-list-table.php';
+}
+
+require dirname( __FILE__ ) . '/Likes_List_Table.php';
+
 class LikesTest {
 	private wpdb $db;
+
+	public $listTable;
 
 	const PLUGIN_VERSION      = '0.0.1';
 	const PLUGIN_DB_VERSION   = '0.0.1';
@@ -91,6 +99,8 @@ class LikesTest {
 	 * @return void
 	 */
 	public function add_admin_page(): void {
+		$this->listTable = new Likes_List_Table();
+		$this->listTable->prepare_items();
 		add_menu_page( 'LikesTest Settings', 'LikesTest', 'manage_options', 'likestest', [
 			$this,
 			'render_template',
