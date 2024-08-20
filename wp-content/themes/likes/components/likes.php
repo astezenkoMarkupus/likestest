@@ -13,7 +13,7 @@ if ( ! $post_id = $args['id'] ?? null ) {
 $likes_count = crit_get_post_likes_count( $post_id );
 ?>
 
-<div class="c-likes">
+<div class="c-likes js-likes">
 	<button class="c-btn likes-plus" data-id="<?php echo esc_attr( $post_id ) ?>">
 		<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<g clip-path="url(#clip0_5_204)">
@@ -31,7 +31,7 @@ $likes_count = crit_get_post_likes_count( $post_id );
 
 	<span class="likes-count"><?php echo esc_attr( $likes_count ) ?></span>
 
-	<button class="c-btn likes-minus"<?php echo ( $likes_count <= 0 ? 'disabled' : '' ) ?> data-id="<?php echo esc_attr( $post_id ) ?>">
+	<button class="c-btn likes-minus" data-id="<?php echo esc_attr( $post_id ) ?>">
 		<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<g clip-path="url(#clip0_5_209)">
 				<path d="M11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" fill="currentColor"/>

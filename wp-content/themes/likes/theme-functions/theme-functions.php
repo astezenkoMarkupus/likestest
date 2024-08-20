@@ -101,9 +101,15 @@ function crit_prepare_image_data( $image_id, string $size = 'full', array $break
 function crit_get_post_likes_count( int $post_id ): int {
 	global $wpdb;
 
-	$query       = $wpdb->prepare( "SELECT COUNT(*) FROM {$wpdb->prefix}likestest WHERE post_id = %d", $post_id );
-	$likes_count = $wpdb->get_var( $query );
+	$query_plus        = $wpdb->prepare( "SELECT COUNT(*) FROM {$wpdb->prefix}likestest WHERE post_id = %d AND type = 1",
+		$post_id );
+	$likes_count_plus  = $wpdb->get_var( $query_plus );
+	$likes_count_plus  = $likes_count_plus ?: 0;
+	$query_minus       = $wpdb->prepare( "SELECT COUNT(*) FROM {$wpdb->prefix}likestest WHERE post_id = %d AND type = 0",
+		$post_id );
+	$likes_count_minus = $wpdb->get_var( $query_minus );
+	$likes_count_minus = $likes_count_minus ?: 0;
 
-	return $likes_count ?: 0;
+	return $likes_count_plus - $likes_count_minus;
 }
 
