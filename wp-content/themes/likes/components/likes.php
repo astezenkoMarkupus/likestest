@@ -10,7 +10,7 @@ if ( ! $post_id = $args['id'] ?? null ) {
 	return;
 }
 
-$likes_count = 0;
+$likes_count = crit_get_post_likes_count( $post_id );
 ?>
 
 <div class="c-likes">

@@ -10,7 +10,7 @@
 /**
  * Clean incoming value from trash.
  *
- * @param mixed $value Some value to clean.
+ * @param  mixed  $value  Some value to clean.
  *
  * @return    string
  */
@@ -38,9 +38,9 @@ function crit_prettify_data( $data ): void {
  * Prepare data for the image component.
  *
  * @param        $image_id
- * @param string $size
- * @param array  $breakpoints
- * @param array  $atts bool $is_lazy, string $class
+ * @param  string  $size
+ * @param  array  $breakpoints
+ * @param  array  $atts  bool $is_lazy, string $class
  *
  * @return array
  */
@@ -79,13 +79,31 @@ function crit_prepare_image_data( $image_id, string $size = 'full', array $break
 		'url'         => wp_get_attachment_image_url( $image_id, $size ),
 		'url_2x'      => wp_get_attachment_image_url( $image_id, "$size@2x" ),
 		'width'       => wp_get_attachment_image_src( $image_id, $size ) ? wp_get_attachment_image_src( $image_id,
-			$size )[1] : null,
+			$size )[1]
+			: null,
 		'height'      => wp_get_attachment_image_src( $image_id, $size ) ? wp_get_attachment_image_src( $image_id,
-			$size )[2] : null,
+			$size )[2]
+			: null,
 		'alt'         => get_post_meta( $image_id, '_wp_attachment_image_alt', true ),
 		'lazy'        => isset( $atts['lazy'] ) && $atts['lazy'],
 		'class'       => ( isset( $atts['class'] ) && $atts['class'] ) ? esc_attr( " {$atts['class']}" ) : '',
 		'breakpoints' => $breakpoints_data,
 	];
+}
+
+/**
+ * Get likes count of the specific post.
+ *
+ * @param  int  $post_id
+ *
+ * @return int
+ */
+function crit_get_post_likes_count( int $post_id ): int {
+	global $wpdb;
+
+	$query       = $wpdb->prepare( "SELECT COUNT(*) FROM {$wpdb->prefix}likestest WHERE post_id = %d", $post_id );
+	$likes_count = $wpdb->get_var( $query );
+
+	return $likes_count ?: 0;
 }
 
