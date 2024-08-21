@@ -38,9 +38,9 @@ class LikesTest {
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 
 		add_action( 'wp_ajax_likestest_ajax_vote_plus', [ $this, 'likestest_ajax_vote_plus' ] );
-		add_action( 'wp_ajax_likestest_ajax_vote_plus', [ $this, 'likestest_ajax_vote_plus' ] );
+		add_action( 'wp_ajax_nopriv_likestest_ajax_vote_plus', [ $this, 'likestest_ajax_vote_plus' ] );
 		add_action( 'wp_ajax_likestest_ajax_vote_minus', [ $this, 'likestest_ajax_vote_minus' ] );
-		add_action( 'wp_ajax_likestest_ajax_vote_minus', [ $this, 'likestest_ajax_vote_minus' ] );
+		add_action( 'wp_ajax_nopriv_likestest_ajax_vote_minus', [ $this, 'likestest_ajax_vote_minus' ] );
 
 		add_shortcode( 'likestest', [ $this, 'likestest_shortcode' ] );
 	}
